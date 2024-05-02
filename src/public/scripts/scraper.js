@@ -79,13 +79,14 @@ const resetTimestamp = () => {
 
 
 class Game {
-    constructor(title, img, desc, magnetlink) {
-        this.title = title;
-        this.img = img;
-        this.desc = desc;
-        this.magnetlink = magnetlink;
-    }
+  constructor(title, img, desc, magnetlink) {
+      this.title = title;
+      this.img = img;
+      this.desc = desc;
+      this.magnetlink = magnetlink;
+  }
 }
+
 async function scrapingFunc() {
   const startTime = Date.now();
   const games = [];
@@ -120,11 +121,11 @@ async function scrapingFunc() {
           }
       });
       pics.forEach((pictureElement) => {
-        const srcAttr = pictureElement.getAttribute("src");
-        if (srcAttr && srcAttr.includes("imageban")) {
+          const srcAttr = pictureElement.getAttribute("src");
+          if (srcAttr && srcAttr.includes("imageban")) {
             srcPics.push(srcAttr);
-        }
-    });
+          }
+      });
 
     for (let i = 0; i < titles.length; i++) {
         const title = titles[i].textContent.trim();
@@ -133,11 +134,11 @@ async function scrapingFunc() {
         const magnetLink = magnetLinks[i] || '';
 
         if (img.includes("imageban")) {
-            const game = new Game(title, img, desc, magnetLink);
-            games.push(game);
-        }
+          const game = new Game(title, img, desc, magnetLink);
+          games.push(game);
+      }
     }
-}
+  }
 
   const jsonData = JSON.stringify(games, null, 2);
   fs.writeFileSync(allGamesData, jsonData);
