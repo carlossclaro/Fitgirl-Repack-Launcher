@@ -147,17 +147,17 @@ async function scrapingFunc() {
 let gamePicsSrc = [];
 gameScreenshots.forEach((gamePic) => {
     const srcAttr = gamePic.getAttribute("src");
-    // Check if srcAttr exists and if it includes "riotpixels"
-    if (srcAttr && srcAttr.includes("riotpixels")) {
-        gamePicsSrc.push(srcAttr);
-    }
+    // Check if srcAttr exists and push it to the gamePicsSrc array //Buffer limit hit here
+       // gamePicsSrc.push(srcAttr);
+        console.log("Game pics:>>", gamePicsSrc);
+    
 });
 
        // Log the extracted descriptions for debugging
-    console.log("Description from entry-summary:", pDesc);
-    console.log("Description from su-spoiler-content:", gDesc);
-    console.log("Magnet links:", magnetLinks);
-    console.log("Game pics:", gamePicsSrc);
+    // console.log("Description from entry-summary:", pDesc);
+    // console.log("Description from su-spoiler-content:", gDesc);
+    // console.log("Magnet links:", magnetLinks);
+    // console.log("Game pics:", gamePicsSrc);
     
       for (let i = 0; i < titles.length; i++) {
           const title = titles[i].textContent.trim();

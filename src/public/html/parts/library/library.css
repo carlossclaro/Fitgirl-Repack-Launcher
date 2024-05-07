@@ -235,7 +235,7 @@ body {
   font-family: inherit;
   font-size: inherit;
   background-color: #1c1c1c;
-  border-color: #151515;
+  border: none;
   color: #151515;
   padding: 0.7rem 1rem;
   border-radius: 10px;
@@ -659,9 +659,10 @@ body {
 .selected-icon {
   background-color: rgba(255, 255, 255, 0.672);
   border-radius: 14px;
+
 } /* PART OF LIBRARY WINDOW */
   .start-button{
-    margin-top: 10px;
+    margin-top: 25px;
     padding: 10px;
     background-color: #761c7e;
     color: #fff;

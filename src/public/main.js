@@ -297,16 +297,31 @@ ipcMain.handle(
 );
 ipcMain.handle("execute-child-bridged-file", (event, filePath) => {
   // Execute the file
-  exec(`"${filePath}"`, (error, stdout, stderr) => {
+  exec(`"${filePath}"`, {maxBuffer: 1024 * 1024 * 5 }, (error, stdout, stderr) => { //Buffer size increased to 1MB
     if (error) {
       console.error("Error:", error.message);
+      console.log("stderr:", stderr);
+      console.log("stdout:", stdout);
+      console.log("Buffer Usage:", Buffer.byteLength(stdout, "utf8"));
       return;
     }
     if (stderr) {
       console.error("stderr:", stderr);
+      console.error("Error:", error.message);
+      console.log("stderr:", stderr);
+      console.log("stdout:", stdout);
+      console.log("Buffer Usage:", Buffer.byteLength(stdout, "utf8"));
       return;
     }
     console.log("stdout:", stdout);
+    console.error("Error:", error.message);
+    console.log("stderr:", stderr);
+    console.log("stdout:", stdout);
+    console.log("Buffer Usage:", Buffer.byteLength(stdout, "utf8"));
+
+      // Log buffer usage
+  const bufferUsage = Buffer.byteLength(stdout, "utf8");
+  console.log("Buffer Usage:", bufferUsage);
   });
 });
 ipcMain.handle("spawn-bridged-file", (event, filePath) => {

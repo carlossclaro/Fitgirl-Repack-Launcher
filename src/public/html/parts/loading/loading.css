@@ -24,6 +24,16 @@ body {
 .loading-logo {
     margin-bottom: 20px; /* Adjust the margin as needed */
 }
+.loading-logo img {
+    width: 130px;
+    height: 130px;
+}
+.loading-text {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 20px; /* Adjust the margin as needed */
+}
 
 .loader-container {
     display: flex;
@@ -42,7 +52,7 @@ body {
     height: 10px;
     background: #F9F9F9;
     border-radius: 10px;
-    border: 1px solid pink;
+    border: 1px solid rgb(255, 255, 255);
     position: relative;
     overflow: hidden;
   }

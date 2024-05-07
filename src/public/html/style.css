@@ -250,7 +250,7 @@ body {
   font-family: inherit;
   font-size: inherit;
   background-color: #1c1c1c;
-  border-color: #151515;
+  border: none;
   color: #151515;
   padding: 0.7rem 1rem;
   border-radius: 10px;
@@ -646,11 +646,13 @@ body {
 
 button.spoiler-tab {
   background-color: #363636;
+  color: white;
   border: 1px solid #ccc;
   cursor: pointer;
-  margin-top: 150px;
+  margin-top: 15px;
   padding: 10px;
   width: 100%;
+  border-radius: 10px;
 
 }
 
@@ -658,10 +660,13 @@ button.spoiler-tab {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust 200px to the width of your images */
   grid-gap: 10px; /* Adjust the gap between images */
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .screenshot {
+  width: 247px;
   max-width: 100%; /* Ensure images don't exceed their container's width */
-  height: auto; /* Maintain aspect ratio */
+  height: 138.83px; /* Maintain aspect ratio */
   
 }
